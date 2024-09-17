@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from option_pricing import views
+# from option_pricing import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.option_pricing_view, name='option_pricing'),  # Root URL points to the option form
+    # path('', views.option_pricing_view, name='option_pricing'),  # Root URL points to the option form
+    path('options/', include('option_pricing.urls'))
 ]
 
