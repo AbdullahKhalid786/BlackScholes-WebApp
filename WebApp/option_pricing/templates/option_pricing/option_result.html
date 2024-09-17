@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h2>Option Price: {{ option_price }}</h2>
+        <p>Type: {{ option.option_type }}</p>
+        <p>Underlying Price: {{ option.underlying_price }}</p>
+        <p>Strike Price: {{ option.strike_price }}</p>
+        <p>Volatility: {{ option.volatility }}</p>
+        <p>Time to Maturity: {{ option.time_to_maturity }}</p>
+        <p>Risk-Free Rate: {{ option.risk_free_rate }}</p>
+
+        <h3>Calculate Another Option Price</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Calculate</button>
+        </form>
+    </body>
+</html>
+
